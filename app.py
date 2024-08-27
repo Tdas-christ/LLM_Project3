@@ -88,9 +88,6 @@ def format_output(input_text):
     print(f"Formatted text: {formatted_text}")  # Debugging line
     return formatted_text
 
-
-
-
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 with app.app_context():
@@ -140,15 +137,6 @@ def delete(todo_id):
     db.session.commit()
     return redirect(url_for("home"))
 
-# @app.route("/enrich/<int:todo_id>")
-# def enrich(todo_id):
-#     todo = Todo.query.filter_by(id=todo_id).first()
-#     gen = format_output(todo.title)
-#     # Ensure only the task breakdown is added to the todo title
-#     todo.title = todo.title + " (" + gen + ")"
-#     db.session.commit()
-#     return redirect(url_for("home"))
-
 @app.route("/enrich/<int:todo_id>")
 def enrich(todo_id):
     todo = Todo.query.filter_by(id=todo_id).first()
@@ -163,8 +151,6 @@ def enrich(todo_id):
         return redirect(url_for("home", error=str(e)))
 
     return redirect(url_for("home"))
-
-
 
 @app.route("/process_voice", methods=["POST"])
 def process_voice():
@@ -210,7 +196,6 @@ def process_voice():
     db.session.commit()
 
     return jsonify({'text': text, 'id': new_todo.id, 'title': new_todo.title}), 200
-
 
 if __name__ == "__main__":
     with app.app_context():

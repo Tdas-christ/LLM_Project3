@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do App</title>
+    <title>ToDoGenie</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
@@ -59,6 +59,7 @@
             width: 100%; /* Make audio player responsive */
             max-width: 600px; /* Set a maximum width */
         }
+
     </style>
 </head>
 
@@ -102,8 +103,6 @@
                 <a class="ui green button" href="/enrich/{{ todo.id }}">Ask</a>
             </div>
             {% endfor %}
-
-            <div id="loading" style="display: none;">Processing...</div>
 
         </div>
 
@@ -200,4 +199,3 @@
 </body>
 
 </html>
-

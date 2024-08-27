@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from transformers import AutoTokenizer
 from langchain_community.llms import Ollama # Ollama enables us to run large language models locally, automatically does the compression
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
 #import torch
 import speech_recognition as sr
@@ -12,14 +13,19 @@ import os
 
 app = Flask(__name__)
 
+# os.environ["GROQ_API_KEY"]  = os.getenv("GROQ_API_KEY")
+
+# GROQ_API_KEY = "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"
+api_key = "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"
+
 # Initialize tokenizer and model
 #tokenizer = BartTokenizer.from_pretrained('facebook/bart-large-cnn', )
 #model = BartForConditionalGeneration.from_pretrained('facebook/bart-large-cnn')
 
 
-model = Ollama(model="llama2") # Make sure 'llama2' is the correct model identifier
+# model = Ollama(model="llama2") # Make sure 'llama2' is the correct model identifier
 
-
+model = ChatGroq(model='llama3-70b-8192', api_key = api_key)
 
 # Specify device (CPU or GPU)
 # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -52,7 +58,6 @@ model = Ollama(model="llama2") # Make sure 'llama2' is the correct model identif
     
 def generate_text(input_text):
 
-    model = Ollama(model="llama2") 
     prompt = ChatPromptTemplate.from_messages(
         [
             ("system", "You are a task breakdown expert. Break down the task into a detailed step-by-step guide. Please format each step as a bullet point."),

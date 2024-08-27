@@ -33,7 +33,7 @@ ToDoGenie is an innovative to-do list application designed to streamline task ma
   - **FFmpeg**: A multimedia framework used to handle audio file formats and conversions.
 
 - **Text Generation**: 
-  - **Ollama LLM**: A language model used to generate detailed instructions and enhance task descriptions.
+  - **Groq API**: Allows us to use Llama-3 70b model for text generation.
 
 ## Installation and Setup
 

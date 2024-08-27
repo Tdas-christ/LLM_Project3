@@ -15,9 +15,7 @@ app = Flask(__name__)
 
 # os.environ["GROQ_API_KEY"]  = os.getenv("GROQ_API_KEY")
 
-# GROQ_API_KEY = "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"
-api_key = "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"
-
+api_key ="Your API Key goes here"
 # Initialize tokenizer and model
 #tokenizer = BartTokenizer.from_pretrained('facebook/bart-large-cnn', )
 #model = BartForConditionalGeneration.from_pretrained('facebook/bart-large-cnn')

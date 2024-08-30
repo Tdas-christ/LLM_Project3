@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-ToDoGenie is an innovative to-do list application designed to streamline task management using both traditional text input and advanced voice recognition technology. The application leverages Flask for server-side logic, Semantic UI for a sleek and responsive user interface, and SQLite for efficient task storage and management. Key features include converting voice recordings to text, enriching task descriptions with detailed instructions using the Ollama LLM, and managing tasks effectively.
+ToDoGenie is an innovative to-do list application designed to streamline task management using both traditional text input and advanced voice recognition technology. The application leverages Flask for server-side logic, Semantic UI for a sleek and responsive user interface, and SQLite for efficient task storage and management. Key features include converting voice recordings to text, enriching task descriptions with detailed instructions using Llama-3 70b (referenced using Groq API), and managing tasks effectively.
 
 ![image](https://github.com/user-attachments/assets/9e5e1ad0-e6d2-4142-8bec-5ae5845e8b7c)
 
@@ -11,7 +11,7 @@ ToDoGenie is an innovative to-do list application designed to streamline task ma
 
 - **Voice Input for Tasks**: Record and send voice recordings that are converted into text and added as tasks to your to-do list.
 - **Text Input for Tasks**: Directly enter tasks into a text field and add them to the list.
-- **Task Enrichment**: Generate detailed, step-by-step instructions for tasks using the Ollama LLM to enhance task descriptions.
+- **Task Enrichment**: Generate detailed, step-by-step instructions for tasks using Llama-3 70b to enhance task descriptions.
 - **Task Management**: View, update, and delete tasks from the list.
 - **User Feedback**: Provides real-time error handling and informative messages.
 
